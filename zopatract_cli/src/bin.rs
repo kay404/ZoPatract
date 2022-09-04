@@ -143,11 +143,11 @@ fn cli_export_verifier<
                 },
             );
             fs::create_dir("zop_ink").map_err(|_| "Failed to create contract zop_ink directory")?;
-            fs::create_dir("zop_ink/src").map_err(|_| "Failed to create contract zop_ink/src directory")?;
+            // fs::create_dir("zop_ink/src").map_err(|_| "Failed to create contract zop_ink/src directory")?;
 
             // export ink verifier.rs
-            let output_file = File::create(Path::new("zop_ink/src/lib.rs"))
-                .map_err(|why| format!("Couldn't create zop_ink/src/lib.rs: {}", why))?;
+            let output_file = File::create(Path::new("zop_ink/lib.rs"))
+                .map_err(|why| format!("Couldn't create zop_ink/lib.rs: {}", why))?;
             let mut writer = BufWriter::new(output_file);
             writer
                 .write_all(&ink_verifier.as_bytes())

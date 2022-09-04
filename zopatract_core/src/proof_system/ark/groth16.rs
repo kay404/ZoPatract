@@ -244,7 +244,7 @@ mod tests {
 
         let proof =
             <Ark as Backend<Bls12_381Field, G16>>::generate_proof(program, witness, keypair.pk);
-        let ans = <Ark as Backend<Bls12_381Field, G16>>::verify(keypair.vk, proof);
+        let ans = <Ark as Backend<Bls12_381Field, G16>>::verify(keypair.vk, proof.0);
 
         assert!(ans);
     }

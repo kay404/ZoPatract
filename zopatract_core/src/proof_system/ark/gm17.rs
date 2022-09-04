@@ -231,7 +231,7 @@ mod tests {
 
         let proof =
             <Ark as Backend<Bls12_377Field, GM17>>::generate_proof(program, witness, keypair.pk);
-        let ans = <Ark as Backend<Bls12_377Field, GM17>>::verify(keypair.vk, proof);
+        let ans = <Ark as Backend<Bls12_377Field, GM17>>::verify(keypair.vk, proof.0);
 
         assert!(ans);
     }
@@ -260,7 +260,7 @@ mod tests {
 
         let proof =
             <Ark as Backend<Bw6_761Field, GM17>>::generate_proof(program, witness, keypair.pk);
-        let ans = <Ark as Backend<Bw6_761Field, GM17>>::verify(keypair.vk, proof);
+        let ans = <Ark as Backend<Bw6_761Field, GM17>>::verify(keypair.vk, proof.0);
 
         assert!(ans);
     }
